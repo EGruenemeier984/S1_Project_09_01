@@ -13,3 +13,29 @@
 
 
 /* Validation Styles */
+/* This effects all inputs, select elements, and textarea elements that are selected or focused on. This style rule makes them change there background color to a light yellow color. */
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: rgb(245, 245, 140);
+}
+
+/* This effects the id's of all of the different inputs that have inline validation and sets the backgorund color to a green color. */
+#fnBox:focus:valid,
+#lnBox:focus:valid,
+#addBox:focus:valid,
+#mailBox:focus:valid,
+#phoneBox:focus:valid,
+#idBox:focus:valid {
+    background: rgb(220, 255, 220) url(cg_valid.png) right no-repeat;
+}
+
+/* This effects the id's of all of the different inputs that have inline validation and sets the backgorund color to a red color. */
+#fnBox:focus:invalid,
+#lnBox:focus:invalid,
+#addBox:focus:invalid,
+#mailBox:focus:invalid,
+#phoneBox:focus:invalid,
+#idBox:focus:invalid {
+    background: rgb(255, 232, 232) url(cg_invalid.png) right no-repeat;
+}

@@ -20,6 +20,7 @@
     <title>CGIP Registration Form</title>
     <link href="cg_base.css" rel="stylesheet" />
     <link href="cg_styles.css" rel="stylesheet" />
+    <!-- Theese are the links to all external document such as the CSS and javascript files. -->
     <link rel="stylesheet" href="cg_forms.css" />
     <link rel="stylesheet" href="cg_validate.css" />
 
@@ -55,10 +56,13 @@
     <section>
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
-
+        <!-- This is the form tag with the action of the example server using the POST method -->
         <form action="http://www.example.com/cg/register" method="POST">
+            <!-- This is the label for the title box and has the for attribute that matches the inputs ID -->
             <label for="titleBox">Title</label>
+            <!-- This is the input tag that is set to text so that the user can only enter certain data. -->
             <input type="text" name="title" id="titleBox" list="titleList" />
+            <!-- This datalist is contains preset options that the user can select. -->
             <datalist id="titleList">
                 <option value="Mr."></option>
                 <option value="Mrs."></option>
@@ -68,27 +72,46 @@
                 <option value="Assist. Prof."></option>
                 <option value="Assoc. Prof."></option>
             </datalist>
-
+            <!-- This is the label for the first name input. -->
             <label for="firstName">First Name*</label>
-            <input type="text" name="first" id="firstName" required />
-
+            <!-- This is the input tag that is for the user to enter text and also contains a required attribute. -->
+            <input type="text" name="first" id="fnBox" required />
+            <!-- This is the label for the lastname input. -->
             <label for="lastName">Last Name*</label>
-            <input type="text" name="last" id="lastName" required />
-
+            <!-- This is the input for last name and is set to a text type. -->
+            <input type="text" name="last" id="lnBox" required />
+            <!-- This is the label for the address textarea -->
             <label for="addBox">Address*</label>
-            <input type="text" name="address" id="addBox" required />
-
+            <!-- This textarea tag is for the user to enter an adrees  -->
+            <textarea name="address" id="addBox" required></textarea>
+            <!-- This is the label element that is for the user to input there Company or University. -->
             <label for="groupBox">Company or University</label>
+            <!-- This is the actual input tag that allows the user to type in text. -->
             <input type="text" name="group" id="groupBox" />
-
+            <!-- This is the label for the e-mail input. -->
             <label for="mailBox">E-mail*</label>
-            <input type="text" name="mail" id="mailBox" required />
-
-            <label for="phoneNumber">Phone Number</label>
-            <input type="text" name="phone" id="phoneNumber" placeholder="(nnn)nnn-nnnn" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />
-
+            <!-- This is the input for entering an e-mail address  -->
+            <input type="email" name="mail" id="mailBox" required />
+            <!-- This is the label for the phone number input. -->
+            <label for="phoneBox">Phone Number</label>
+            <!-- This input is for the user to enter a phone number, uses regex to make sure it is entered in the proper format. -->
+            <input type="text" name="phone" id="phoneBox" placeholder="(nnn)nnn-nnnn" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />
+            <!-- This is the label for the membership ID. -->
             <label for="acgipID">ACGIP Memebership Number</label>
-            <input type="text" name="acgip" id="acgipID" placeholder="acgip-nnnnnn" />
+            <!-- This is the input for the user to enter there memebership ID also uses regex to make sure its entered properly. -->
+            <input type="text" name="acgip" id="idBox" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$" />
+            <!-- This is the label for the registration category list. -->
+            <label for="regList">Registration Category</label>
+            <!-- This select element is used so the user can select an option form the following list. -->
+            <select name="registrate" id="regList">
+                <option value="memeber">ACGIP Member ($695)</option>
+                <option value="non-Memeber">Non-Member ($795)</option>
+                <option value="student">Student ($310)</option>
+                <option value="poster">Poster ($95)</option>
+                <option value="guest">Guest ($35)</option>
+            </select>
+            <!-- This is the input for submiting the form. -->
+            <p> <input type="submit" value="Continue"> </p>
 
         </form>
 
